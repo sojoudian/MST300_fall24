@@ -24,4 +24,6 @@ root@t1-vm1:~# cd $HOME
 
  maziar@t1-vm1:~$
  maziar@t1-vm1:~#
+
+ maziar@t1-vm1:~# shutdown -P now
  ```
