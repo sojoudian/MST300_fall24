@@ -34,5 +34,9 @@ sudo su \
 	•	172.16.0.0 to 172.31.255.255 \
 	•	192.168.0.0 to 192.168.255.255 \
 
+# Debian
+## Update the local repositories using apt
+sudo apt Update\
 
-
+## Install Nginx \
+sudo apt instal nginx -y \
