@@ -40,3 +40,4 @@ sudo apt Update\
 
 ## Install Nginx \
 sudo apt instal nginx -y \
+sudo apt install htop -y
