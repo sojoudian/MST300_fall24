@@ -1,0 +1,22 @@
+Virtual Machine:
+
+Resource Group: - name 
+                - Region
+
+an Image:   - Debian
+            - Windows Server 2019
+            
+Compute Size:   vCPU, vRAM
+
+Storage:    - Type (HDD, SSD, P SSD)
+            - Size 30,64
+
+Network:    - Private IP
+            - Public  IP
+            
+Auth:   - User & pass
+        - Key based Auth
+
+Network Security Group: NSG:
+        - Port 22, 3389, 80, 443
+        

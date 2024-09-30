@@ -1,0 +1,21 @@
+Virtual Machine:
+
+Resource Group: - name: vm1 
+                - Region: US-East
+
+an Image:   - Debian
+            
+Compute Size:   vCPU: 2 vCPU , vRAM: 4GB
+
+Storage:    - Type Standard HDD
+            - Size 64
+
+Network:    - Private IP: Yes (10.1.0.0/24)
+            - Public  IP: Yes, get from DHCP Server
+            
+Auth:   - Username: maziar
+        - password: MST300MST300
+
+Network Security Group: NSG:
+        - Port 22, 80
+        
