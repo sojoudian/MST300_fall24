@@ -88,8 +88,8 @@
         },
         "osProfile": {
           "computerName": "vm1",
-          "adminUsername": "maziar",
-          "adminPassword": "MST300MST300!@#$"
+          "adminUsername": "",
+          "adminPassword": ""
         },
         "networkProfile": {
           "networkInterfaces": [
