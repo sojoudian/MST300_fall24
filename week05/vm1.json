@@ -65,7 +65,7 @@
       "location": "eastus",
       "dependsOn": [
         "Microsoft.Network/networkInterfaces/vm1-nic",
-        "Microsoft.Storage/storageAccounts/vm1storage"
+        "Microsoft.Storage/storageAccounts/vm1storagemaziar"
       ],
       "properties": {
         "hardwareProfile": {
@@ -89,7 +89,7 @@
         "osProfile": {
           "computerName": "vm1",
           "adminUsername": "maziar",
-          "adminPassword": "MST300MST300"
+          "adminPassword": "MST300MST300!@#$"
         },
         "networkProfile": {
           "networkInterfaces": [
@@ -139,7 +139,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2019-06-01",
-      "name": "vm1storage",
+      "name": "vm1storagemaziar",
       "location": "eastus",
       "sku": {
         "name": "Standard_LRS"
