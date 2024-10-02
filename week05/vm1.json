@@ -80,15 +80,15 @@
             "diskSizeGB": 64
           },
           "imageReference": {
-            "publisher": "Debian",
-            "offer": "debian-10",
-            "sku": "10",
+            "publisher": "MicrosoftWindowsServer",
+            "offer": "WindowsServer",
+            "sku": "2019-Datacenter",
             "version": "latest"
           }
         },
         "osProfile": {
-          "computerName": "vm1",
-          "adminUsername": "",
+          "computerName": "10123322-vm",
+          "adminUsername": "Pa$$w0rd1234",
           "adminPassword": ""
         },
         "networkProfile": {
