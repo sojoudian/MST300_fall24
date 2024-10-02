@@ -88,8 +88,8 @@
         },
         "osProfile": {
           "computerName": "10123322-vm",
-          "adminUsername": "Pa$$w0rd1234",
-          "adminPassword": ""
+          "adminUsername": "azureuser",
+          "adminPassword": "Pa$$w0rd1234"
         },
         "networkProfile": {
           "networkInterfaces": [
