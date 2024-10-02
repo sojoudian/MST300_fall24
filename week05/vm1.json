@@ -108,7 +108,7 @@
       "properties": {
         "securityRules": [
           {
-            "name": "allow_ssh",
+            "name": "allow_rdp",
             "properties": {
               "priority": 1000,
               "protocol": "Tcp",
@@ -117,7 +117,7 @@
               "sourceAddressPrefix": "*",
               "sourcePortRange": "*",
               "destinationAddressPrefix": "*",
-              "destinationPortRange": "22"
+              "destinationPortRange": "3389"
             }
           },
           {
