@@ -77,7 +77,7 @@
             "managedDisk": {
               "storageAccountType": "Standard_LRS"
             },
-            "diskSizeGB": 64
+            "diskSizeGB": 256
           },
           "imageReference": {
             "publisher": "MicrosoftWindowsServer",
