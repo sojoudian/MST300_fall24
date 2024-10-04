@@ -1,4 +1,4 @@
-$resourceGroupName = 'r3'
+$resourceGroupName = 'MyResourceGroup'
 $location = 'East US'
 
 # Create a new resource group
@@ -19,6 +19,24 @@ $publicIP = New-AzPublicIpAddress -Name 'MyPublicIP' -ResourceGroupName $resourc
 # Create a network interface and associate the public IP address
 $nic = New-AzNetworkInterface -Name 'MyNic' -ResourceGroupName $resourceGroupName -Location $location -SubnetId $virtualNetwork.Subnets[0].Id -PublicIpAddressId $publicIP.Id
 
+# Create a new network security group
+$nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroupName -Location $location -Name 'MyNSG'
+
+# Create a new inbound security rule to allow RDP access (port 3389)
+$rdpRule = New-AzNetworkSecurityRuleConfig -Name 'Allow-RDP' `
+    -Access Allow -Protocol Tcp -Direction Inbound -Priority 1000 -SourceAddressPrefix '*' `
+    -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange 3389
+
+# Add the RDP rule to the NSG
+$nsg.SecurityRules.Add($rdpRule)
+
+# Update the NSG with the RDP rule
+Set-AzNetworkSecurityGroup -NetworkSecurityGroup $nsg
+
+# Associate the NSG with the network interface
+$nic.NetworkSecurityGroup = $nsg
+Set-AzNetworkInterface -NetworkInterface $nic
+
 # Secure password for the VM
 $securePassword = ConvertTo-SecureString 'Test1234$$$$' -AsPlainText -Force
 
@@ -26,8 +44,8 @@ $securePassword = ConvertTo-SecureString 'Test1234$$$$' -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential ('azureuser', $securePassword)
 
 # Configure the VM
-$vmConfig = New-AzVMConfig -VMName 'v2' -VMSize 'Standard_D2s_v3' |
- Set-AzVMOperatingSystem -Windows -ComputerName 'v2' -Credential $credential -ProvisionVMAgent -EnableAutoUpdate |
+$vmConfig = New-AzVMConfig -VMName 'MyVM' -VMSize 'Standard_D2s_v3' |
+ Set-AzVMOperatingSystem -Windows -ComputerName 'MyVM' -Credential $credential -ProvisionVMAgent -EnableAutoUpdate |
  Set-AzVMSourceImage -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2016-Datacenter' -Version 'latest' |
  Add-AzVMNetworkInterface -Id $nic.Id |
  Set-AzVMOSDisk -CreateOption FromImage -Caching ReadWrite -StorageAccountType StandardSSD_LRS
