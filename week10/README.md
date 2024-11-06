@@ -18,5 +18,11 @@ Azure SQL Database 99.99% ===> 0.9999
 
 3- Convert the final result back to a percentage by multilying by 100:
 ```bash
+0.99790114496250251 * 100 = 99.790114496250251%
+```
 
+4- Round to wto decimal places:
+```bash
+#the result is approximately:
+99.70%
 ```
